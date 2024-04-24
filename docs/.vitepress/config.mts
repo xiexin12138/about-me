@@ -12,6 +12,9 @@ export default defineConfig({
       { text: '主页', link: '/' },
     ],
 
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '回到顶部',
+
     sidebar: [
       {
         text: '目录',
@@ -96,6 +99,9 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/en/index' },
         ],
+
+        sidebarMenuLabel: ' Menu',
+        returnToTopLabel: 'Return to top',
         sidebar: [
           {
             text: 'Contents',
