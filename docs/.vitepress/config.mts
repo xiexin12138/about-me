@@ -4,7 +4,15 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Jia him",
   description: "Jia him 的个人记录",
-
+  head: [
+    [
+      'script',
+      {
+        defer: '',
+        dataDomain: 'jiahim.com',
+        src: 'https://analytics.gptnb.xyz/js/script.js'
+      }]
+  ],
   themeConfig: {
     logo: '/images/me.jpg',
 
