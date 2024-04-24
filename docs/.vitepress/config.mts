@@ -15,6 +15,11 @@ export default defineConfig({
     sidebarMenuLabel: '菜单',
     returnToTopLabel: '回到顶部',
 
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+
     sidebar: [
       {
         text: '目录',
@@ -102,6 +107,13 @@ export default defineConfig({
 
         sidebarMenuLabel: ' Menu',
         returnToTopLabel: 'Return to top',
+
+
+        docFooter: {
+          prev: 'Previous page',
+          next: 'Next page'
+        },
+
         sidebar: [
           {
             text: 'Contents',
