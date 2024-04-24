@@ -29,7 +29,7 @@ features:
     link: /skill/index
   - icon: ✍️
     title: 随笔
-    details: 往前看是迷茫，往后看是人生
+    details: 往前看是迷茫，往后看是命运
     link: /essay/index
 ---
 
