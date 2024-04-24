@@ -14,7 +14,7 @@ export default defineConfig({
       }]
   ],
   themeConfig: {
-    logo: '/images/me.jpg',
+    logo: '/images/me-gray.jpg',
 
     nav: [
       { text: '主页', link: '/' },
