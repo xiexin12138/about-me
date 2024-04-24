@@ -99,53 +99,53 @@ export default defineConfig({
     }
   },
 
-  locales: {
-    root: {
-      label: ' 简体中文',
-      lang: 'zh',
-    },
-    en: {
-      label: ' English',
-      lang: 'en', // 可选，将作为 `lang` 属性添加到 `html` 标签中
-      link: '/en/', // 默认 /fr/ -- 显示在导航栏翻译菜单上，可以是外部的
-      themeConfig: {
-        nav: [
-          { text: 'Home', link: '/en/index' },
-        ],
+  // locales: {
+  //   root: {
+  //     label: ' 简体中文',
+  //     lang: 'zh',
+  //   },
+  //   en: {
+  //     label: ' English',
+  //     lang: 'en', // 可选，将作为 `lang` 属性添加到 `html` 标签中
+  //     link: '/en/', // 默认 /fr/ -- 显示在导航栏翻译菜单上，可以是外部的
+  //     themeConfig: {
+  //       nav: [
+  //         { text: 'Home', link: '/en/index' },
+  //       ],
 
-        sidebarMenuLabel: ' Menu',
-        returnToTopLabel: 'Return to top',
+  //       sidebarMenuLabel: ' Menu',
+  //       returnToTopLabel: 'Return to top',
 
 
-        docFooter: {
-          prev: 'Previous page',
-          next: 'Next page'
-        },
+  //       docFooter: {
+  //         prev: 'Previous page',
+  //         next: 'Next page'
+  //       },
 
-        sidebar: [
-          {
-            text: 'Contents',
-            items: [
-              { text: 'Reading Notes', link: '/en/book/index' },
-              {
-                text: 'Technical Article', items: [
-                  { text: 'docs/en/skill/how-to-use-vitepress-1.md', link: '/en/skill/how-to-use-vitepress-1' }
-                ]
-              },
-              { text: 'Essay', link: '/en/essay/index' }
-            ]
-          }
-        ],
+  //       sidebar: [
+  //         {
+  //           text: 'Contents',
+  //           items: [
+  //             { text: 'Reading Notes', link: '/en/book/index' },
+  //             {
+  //               text: 'Technical Article', items: [
+  //                 { text: 'docs/en/skill/how-to-use-vitepress-1.md', link: '/en/skill/how-to-use-vitepress-1' }
+  //               ]
+  //             },
+  //             { text: 'Essay', link: '/en/essay/index' }
+  //           ]
+  //         }
+  //       ],
 
-        lastUpdated: {
-          text: "Last updated" // 启用最后更新时间的显示，并且使用该文本替换
-        },
+  //       lastUpdated: {
+  //         text: "Last updated" // 启用最后更新时间的显示，并且使用该文本替换
+  //       },
 
-        outline: {
-          level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
-          label: "内容大纲"
-        }
-      }
-    }
-  },
+  //       outline: {
+  //         level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
+  //         label: "内容大纲"
+  //       }
+  //     }
+  //   }
+  // },
 })
