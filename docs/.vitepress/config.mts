@@ -5,7 +5,6 @@ export default defineConfig({
   title: "Jia him",
   description: "Jia him 的个人记录",
 
-  lastUpdated: true,
   themeConfig: {
     logo: '/images/me.jpg',
 
@@ -74,9 +73,9 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/xiexin12138' }
     ],
-    // lastUpdated: {
-    //   text: "最后更新时间" // 启用最后更新时间的显示，并且使用该文本替换
-    // },
+    lastUpdated: {
+      text: "最后更新时间" // 启用最后更新时间的显示，并且使用该文本替换
+    },
 
     outline: {
       level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
@@ -113,7 +112,7 @@ export default defineConfig({
         ],
 
         lastUpdated: {
-          text: "Last update" // 启用最后更新时间的显示，并且使用该文本替换
+          text: "Last updated" // 启用最后更新时间的显示，并且使用该文本替换
         },
 
         outline: {
