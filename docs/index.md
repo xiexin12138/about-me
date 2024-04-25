@@ -32,7 +32,3 @@ features:
     details: 往前看是迷茫，往后看是命运
     link: /essay/index
 ---
-
-## Getting Started
-
-这是一段测试文案

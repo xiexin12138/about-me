@@ -33,14 +33,17 @@ export default defineConfig({
         text: '目录',
         items: [
           {
-            text: '读书笔记', link: '/book/index'
+            text: '读书笔记', items: [
+              {text: '领域驱动设计：软件核心复杂性应对之道', link: '../book/领域驱动设计：软件核心复杂性应对之道'}
+            ]
           },
           {
             text: '技术文章', items: [
               { text: '如何使用 Vitepress 搭建个人博客 （小白版本）', link: '/skill/how-to-use-vitepress-1' }
             ]
           },
-          { text: '随笔', link: '/essay/index' }
+          { text: '随笔', link: '/essay/index' },
+          { text: '网站数据', link: '/my-site'}
         ]
       }
     ],
@@ -95,7 +98,7 @@ export default defineConfig({
 
     outline: {
       level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
-      label: "内容大纲"
+      label: "目录"
     }
   },
 
