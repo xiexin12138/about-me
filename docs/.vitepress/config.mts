@@ -34,7 +34,7 @@ export default defineConfig({
         items: [
           {
             text: '读书笔记', items: [
-              {text: '领域驱动设计：软件核心复杂性应对之道', link: '../book/领域驱动设计：软件核心复杂性应对之道'}
+              { text: '领域驱动设计：软件核心复杂性应对之道', link: '../book/领域驱动设计：软件核心复杂性应对之道' }
             ]
           },
           {
@@ -43,7 +43,17 @@ export default defineConfig({
             ]
           },
           { text: '随笔', link: '/essay/index' },
-          { text: '网站数据', link: '/my-site'}
+          {
+            text: '经验之谈', items: [
+              {
+                text: '2024年度', items: [
+                  { text: '简单介绍', link: '/work/index' },
+                  { text: '【04-29】在接手的项目中，发现开发环境使用了压缩版本的 vue', link: '/work/2024042901' }
+                ]
+              }
+            ]
+          },
+          { text: '网站数据', link: '/my-site' }
         ]
       }
     ],
@@ -66,26 +76,6 @@ export default defineConfig({
             }
           }
         },
-        locales: {
-          en: {
-            translations: {
-
-              button: {
-                buttonText: 'Search',
-                buttonAriaLabel: 'Search'
-              },
-              modal: {
-                noResultsText: 'No results for',
-                resetButtonTitle: 'Reset search',
-                footer: {
-                  selectText: 'to select',
-                  navigateText: 'to navigate',
-                  closeText: 'to close'
-                }
-              }
-            }
-          }
-        }
       }
     },
 
@@ -102,53 +92,4 @@ export default defineConfig({
     }
   },
 
-  // locales: {
-  //   root: {
-  //     label: ' 简体中文',
-  //     lang: 'zh',
-  //   },
-  //   en: {
-  //     label: ' English',
-  //     lang: 'en', // 可选，将作为 `lang` 属性添加到 `html` 标签中
-  //     link: '/en/', // 默认 /fr/ -- 显示在导航栏翻译菜单上，可以是外部的
-  //     themeConfig: {
-  //       nav: [
-  //         { text: 'Home', link: '/en/index' },
-  //       ],
-
-  //       sidebarMenuLabel: ' Menu',
-  //       returnToTopLabel: 'Return to top',
-
-
-  //       docFooter: {
-  //         prev: 'Previous page',
-  //         next: 'Next page'
-  //       },
-
-  //       sidebar: [
-  //         {
-  //           text: 'Contents',
-  //           items: [
-  //             { text: 'Reading Notes', link: '/en/book/index' },
-  //             {
-  //               text: 'Technical Article', items: [
-  //                 { text: 'docs/en/skill/how-to-use-vitepress-1.md', link: '/en/skill/how-to-use-vitepress-1' }
-  //               ]
-  //             },
-  //             { text: 'Essay', link: '/en/essay/index' }
-  //           ]
-  //         }
-  //       ],
-
-  //       lastUpdated: {
-  //         text: "Last updated" // 启用最后更新时间的显示，并且使用该文本替换
-  //       },
-
-  //       outline: {
-  //         level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
-  //         label: "内容大纲"
-  //       }
-  //     }
-  //   }
-  // },
 })

@@ -9,14 +9,11 @@ hero:
   image: /images/me.jpg
   actions:
     - theme: brand
-      text: 读书笔记
-      link: /book/index
+      text: 经验之谈
+      link: /work/index
     - theme: alt
-      text: 技术文章
-      link: /skill/index
-    - theme: alt
-      text: 随笔
-      link: /essay/index
+      text: 网站数据
+      link: /my-site
 
 features:
   - icon: 📚
