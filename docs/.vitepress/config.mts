@@ -48,7 +48,12 @@ export default defineConfig({
               {
                 text: '2024年度', items: [
                   { text: '简单介绍', link: '/work/index' },
-                  { text: '【04-29】在接手的项目中，发现开发环境使用了压缩版本的 vue', link: '/work/2024042901' }
+                  {
+                    text: '4 月', items: [
+                      { text: '29号-推荐时段问题', link: '/work/2024042902' },
+                      { text: '29号-在接手的项目中，发现开发环境使用了压缩版本的 vue', link: '/work/2024042901' }
+                    ]
+                  }
                 ]
               }
             ]
