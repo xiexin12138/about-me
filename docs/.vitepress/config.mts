@@ -47,9 +47,11 @@ export default defineConfig({
             text: '经验之谈', items: [
               {
                 text: '2024年度', items: [
-                  { text: '简单介绍', link: '/work/index' },
+                  { text: '为什么要有这份章节？', link: '/work/index' },
                   {
-                    text: '4 月', items: [
+                    text: '4 月',
+                    collapsed: true,
+                    items: [
                       { text: '29号-时间段内不重叠配置处理', link: '/work/2024042902' },
                       { text: '29号-在接手的项目中，发现开发环境使用了压缩版本的 vue', link: '/work/2024042901' }
                     ]
