@@ -48,7 +48,7 @@ export default defineConfig({
             text: '经验之谈', items: [
               {
                 text: '2024年度', items: [
-                  { text: '为什么要有这份章节？', link: '/work/index' },
+                  { text: '为什么要有这个章节？', link: '/work/index' },
                   {
                     text: '4 月',
                     collapsed: true,
