@@ -39,7 +39,7 @@ export default defineConfig({
           },
           {
             text: '技术文章', items: [
-              { text: '如何使用 Vitepress 搭建个人博客 （小白版本）', link: '/skill/how-to-use-vitepress-1' },
+              { text: 'ES6细节备忘录', link: '/skill/es6' },
               { text: 'Vercel 踩坑记录', link: '/skill/vercel-record'}
             ]
           },
