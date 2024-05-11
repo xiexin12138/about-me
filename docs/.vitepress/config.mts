@@ -40,7 +40,7 @@ export default defineConfig({
           {
             text: '技术文章', items: [
               { text: 'ES6细节备忘录', link: '/skill/es6' },
-              { text: 'Vercel 踩坑记录', link: '/skill/vercel-record'}
+              { text: 'Vercel 踩坑记录', link: '/skill/vercel-record' }
             ]
           },
           { text: '随笔', link: '/essay/index' },
@@ -50,11 +50,18 @@ export default defineConfig({
                 text: '2024年度', items: [
                   { text: '为什么要有这个章节？', link: '/work/index' },
                   {
+                    text: '5 月',
+                    collapsed: true,
+                    items: [
+                      { text: 'vue2 老项目改造使用 tailwindcss 踩坑记录', link: '/work/2024051101' }
+                    ]
+                  },
+                  {
                     text: '4 月',
                     collapsed: true,
                     items: [
-                      { text: '29号-时间段内不重叠配置处理', link: '/work/2024042902' },
-                      { text: '29号-在接手的项目中，发现开发环境使用了压缩版本的 vue', link: '/work/2024042901' }
+                      { text: '时间段内不重叠配置处理', link: '/work/2024042902' },
+                      { text: '在接手的项目中，发现开发环境使用了压缩版本的 vue', link: '/work/2024042901' },
                     ]
                   }
                 ]
@@ -90,9 +97,9 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/xiexin12138' }
     ],
-    lastUpdated: {
-      text: "最后更新时间" // 启用最后更新时间的显示，并且使用该文本替换
-    },
+    // lastUpdated: {
+    //   text: "最后更新时间" // 启用最后更新时间的显示，并且使用该文本替换
+    // },
 
     outline: {
       level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
