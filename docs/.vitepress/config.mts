@@ -40,6 +40,7 @@ export default defineConfig({
           {
             text: '技术文章', items: [
               { text: 'ES6细节备忘录', link: '/skill/es6' },
+              { text: 'NPM 报错集锦', link: '/skill/npm' },
               { text: 'Vercel 踩坑记录', link: '/skill/vercel-record' }
             ]
           },
