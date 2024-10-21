@@ -1,6 +1,61 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, DefaultTheme } from 'vitepress'
+import fs from 'node:fs'
+import path from 'node:path'
 
-// https://vitepress.dev/reference/site-config
+// 函数用于读取文件夹内容并生成侧边栏项
+function generateSidebarItems(dir) {
+  const items: DefaultTheme.SidebarItem[] = []
+  const files = fs.readdirSync(dir).sort((a, b) => b.localeCompare(a)) // 按文件名降序排列
+
+  files.forEach(file => {
+    if (file.endsWith('.md')) {
+      const filePath = path.join(dir, file)
+      const content = fs.readFileSync(filePath, 'utf-8')
+      const firstLine = content.split('\n')[0].replace(/^#\s*/, '') // 去掉开头的 # 号
+      const date = file.split('.')[0] // 假设文件名格式为 YYYY-MM-DD.md
+
+      items.push({
+        text: firstLine || date,
+        link: `/work/${date}`
+      })
+    }
+  })
+
+  return items
+}
+
+// 生成按月份分组的侧边栏项
+function generateMonthlyItems(items) {
+  const monthlyItems = {}
+  
+  items.forEach(item => {
+    const [year, month, day] = item.link.split('/').pop().split('-')
+    if (year && month && day) {
+      const title = `[${year}-${month}-${day}] `
+      item.text = title + item.text
+    }
+    // if (!monthlyItems[yearMonth]) {
+    //   monthlyItems[yearMonth] = []
+    // }
+    // monthlyItems[yearMonth].push(item)
+  })
+
+  return items
+}
+
+// 生成经验之谈部分的侧边栏配置
+const workItems = generateSidebarItems(path.resolve(__dirname, '../work'))
+const monthlyWorkItems = generateMonthlyItems(workItems)
+
+const sidebar: DefaultTheme.Sidebar = {
+  '/work/': [
+    {
+      text: 'Work',
+      items: [] as DefaultTheme.SidebarItem[] // 明确定义items的类型
+    }
+  ]
+}
+
 export default defineConfig({
   title: "Jia him",
   description: "Jia him 的个人记录",
@@ -40,33 +95,14 @@ export default defineConfig({
           {
             text: '技术文章', items: [
               { text: 'ES6细节备忘录', link: '/skill/es6' },
+              { text: 'NPM 报错集锦', link: '/skill/npm' },
               { text: 'Vercel 踩坑记录', link: '/skill/vercel-record' }
             ]
           },
           { text: '随笔', link: '/essay/index' },
           {
-            text: '经验之谈', items: [
-              {
-                text: '2024年度', items: [
-                  { text: '为什么要有这个章节？', link: '/work/index' },
-                  {
-                    text: '5 月',
-                    collapsed: true,
-                    items: [
-                      { text: 'vue2 老项目改造使用 tailwindcss 踩坑记录', link: '/work/2024051101' }
-                    ]
-                  },
-                  {
-                    text: '4 月',
-                    collapsed: true,
-                    items: [
-                      { text: '时间段内不重叠配置处理', link: '/work/2024042902' },
-                      { text: '在接手的项目中，发现开发环境使用了压缩版本的 vue', link: '/work/2024042901' },
-                    ]
-                  }
-                ]
-              }
-            ]
+            text: '经验之谈',
+            items: monthlyWorkItems as DefaultTheme.SidebarItem[]
           },
           { text: '网站数据', link: '/my-site' }
         ]
