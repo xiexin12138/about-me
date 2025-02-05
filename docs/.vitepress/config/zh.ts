@@ -5,7 +5,7 @@ import path from 'node:path'
 export const zh = defineConfig({
   themeConfig: {
     nav: [
-      { text: '主页', link: '/zh/' },
+      { text: '主页', link: '/' },
     ],
     langMenuLabel: '多语言',
     returnToTopLabel: '回到顶部',
@@ -18,33 +18,7 @@ export const zh = defineConfig({
       prev: '上一页',
       next: '下一页'
     },
-    sidebar: [
-      {
-        text: '目录',
-        items: [
-          {
-            text: '读书笔记',
-            items: generateSidebarItems(path.resolve(__dirname, '../../zh/book')) as DefaultTheme.SidebarItem[]
-          },
-          {
-            text: '技术文章',
-            items: generateSidebarItems(path.resolve(__dirname, '../../zh/skill')) as DefaultTheme.SidebarItem[]
-
-          },
-          {
-            text: '随笔',
-            items: generateSidebarItems(path.resolve(__dirname, '../../zh/essay')) as DefaultTheme.SidebarItem[]
-          },
-          {
-            text: '经验之谈',
-            items: generateSidebarItems(path.resolve(__dirname, '../../zh/work')) as DefaultTheme.SidebarItem[]
-          },
-          { text: '网站数据', link: '/my-site' }
-        ]
-      }
-    ],
-
-
+    sidebar: getSideBar()
   }
 })
 
@@ -72,4 +46,32 @@ export const search: DefaultTheme.LocalSearchOptions['locales'] = {
       }
     }
   }
+}
+
+function getSideBar(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: '目录',
+      items: [
+        {
+          text: '读书笔记',
+          items: generateSidebarItems(path.resolve(__dirname, '../../zh/book')) as DefaultTheme.SidebarItem[]
+        },
+        {
+          text: '技术文章',
+          items: generateSidebarItems(path.resolve(__dirname, '../../zh/skill')) as DefaultTheme.SidebarItem[]
+
+        },
+        {
+          text: '随笔',
+          items: generateSidebarItems(path.resolve(__dirname, '../../zh/essay')) as DefaultTheme.SidebarItem[]
+        },
+        {
+          text: '经验之谈',
+          items: generateSidebarItems(path.resolve(__dirname, '../../zh/work')) as DefaultTheme.SidebarItem[]
+        },
+        { text: '网站数据', link: '/my-site' }
+      ]
+    }
+  ]
 }

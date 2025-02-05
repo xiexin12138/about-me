@@ -1,14 +1,14 @@
 import { defineConfig } from 'vitepress'
 import { search as zhSearch } from './zh'
-import { search as enSearch } from './en'
+// import { search as enSearch } from './en'
 
 export const shared = defineConfig({
   title: "Jia him",
   description: "Jia him 的个人记录",
 
-  rewrites: {
-    'zh/:rest*': ':rest*'
-  },
+  // rewrites: {
+  //   'zh/:rest*': ':rest*'
+  // },
   cleanUrls: true,
   metaChunk: true,
   head: [
@@ -29,7 +29,7 @@ export const shared = defineConfig({
       options: {
         locales: {
           ...zhSearch,
-          ...enSearch,
+          // ...enSearch,
         }
       }
     },
