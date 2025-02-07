@@ -39,5 +39,8 @@ export const shared = defineConfig({
       level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
       label: "目录"
     }
+  },
+  sitemap: {
+    hostname: 'https://jiahim.com'
   }
 })
