@@ -1,4 +1,4 @@
-# vitepress 踩坑指南
+# vitepress 踩坑记录
 
 ## 1. rewrites 属性在开发和生产环境表现不一致
 
