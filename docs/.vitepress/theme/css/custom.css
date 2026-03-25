@@ -19,6 +19,18 @@
   background-color: transparent !important;
 }
 
+/* Footer 背景透明（直接匹配，不限定在 VPHome 内） */
+.VPFooter {
+  background-color: transparent !important;
+  background: transparent !important;
+  border-top: none !important;
+}
+
+.VPFooter .container {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
 /* 移动端优化：确保触摸滚动流畅 */
 @media (max-width: 768px) {
   .VPHome {

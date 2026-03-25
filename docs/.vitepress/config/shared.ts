@@ -38,6 +38,11 @@ export const shared = defineConfig({
     outline: {
       level: [2, 4], // 显示 2-4 层级的 title 作为右侧目录
       label: "目录"
+    },
+
+    footer: {
+      message: '非商业用途，允许转载，需注明出处',
+      copyright: `Copyright © 2024-${new Date().getFullYear()} Jia him`
     }
   },
   sitemap: {
