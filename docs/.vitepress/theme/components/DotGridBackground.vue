@@ -83,16 +83,38 @@ const topGradientStyle = computed(() => ({
 
 // 性能优化：使用 RAF
 let rafId = null
+let hideTimeout = null // 隐藏光晕的定时器
 
-// 更新遮罩位置
+// 更新遮罩位置（显示光晕）
 const updateMask = (x, y) => {
   if (!brightLayer.value) return
+
+  // 清除之前的隐藏定时器
+  if (hideTimeout) {
+    clearTimeout(hideTimeout)
+  }
 
   cancelAnimationFrame(rafId)
   rafId = requestAnimationFrame(() => {
     const maskValue = `radial-gradient(${config.value.maskRadius} at ${x}px ${y}px, black 30%, transparent 70%)`
     brightLayer.value.style.maskImage = maskValue
     brightLayer.value.style.webkitMaskImage = maskValue // Safari 兼容
+    brightLayer.value.style.opacity = '1' // 确保可见
+  })
+
+  // 鼠标停止后立即开始淡出
+  hideTimeout = setTimeout(() => {
+    hideMask()
+  }, 200) // 200ms 防抖，避免微小抖动
+}
+
+// 隐藏光晕（淡出效果）
+const hideMask = () => {
+  if (!brightLayer.value) return
+
+  cancelAnimationFrame(rafId)
+  rafId = requestAnimationFrame(() => {
+    brightLayer.value.style.opacity = '0'
   })
 }
 
@@ -132,6 +154,9 @@ onUnmounted(() => {
   if (rafId) {
     cancelAnimationFrame(rafId)
   }
+  if (hideTimeout) {
+    clearTimeout(hideTimeout)
+  }
   window.removeEventListener('resize', checkMobile)
   document.removeEventListener('mousemove', handleMouseMove)
   document.removeEventListener('touchmove', handleTouchMove)
@@ -167,8 +192,11 @@ onUnmounted(() => {
   /* 初始状态：完全隐藏 */
   mask-image: radial-gradient(0px at 50% 50%, black 30%, transparent 70%);
   -webkit-mask-image: radial-gradient(0px at 50% 50%, black 30%, transparent 70%);
+  /* 淡出动画：800ms */
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
   /* 性能优化 */
-  will-change: mask-image;
+  will-change: mask-image, opacity;
 }
 
 /* 顶部渐变遮罩 */
