@@ -1,0 +1,27 @@
+/* 确保首页内容在点阵背景之上 */
+.VPHome {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+}
+
+/* 确保 Hero 区域背景透明 */
+.VPHero {
+  position: relative;
+  z-index: 2;
+  background-color: transparent !important;
+}
+
+/* 确保 Features 区域背景透明 */
+.VPFeatures {
+  position: relative;
+  z-index: 2;
+  background-color: transparent !important;
+}
+
+/* 移动端优化：确保触摸滚动流畅 */
+@media (max-width: 768px) {
+  .VPHome {
+    -webkit-overflow-scrolling: touch;
+  }
+}
