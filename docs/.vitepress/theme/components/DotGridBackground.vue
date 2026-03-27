@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isHomePage" class="dot-grid-background" :style="{ backgroundColor: colors.bg }">
+  <div v-if="isHomePage" class="dot-grid-background">
     <!-- 底层暗点 -->
     <div class="dot-layer dot-layer-dim" :style="dimLayerStyle"></div>
 
@@ -52,13 +52,11 @@ const config = computed(() => {
 const colors = computed(() => {
   if (isDark.value) {
     return {
-      bg: '#1a1a1a',
       dimDot: 'rgba(61, 61, 61, 1)',
       brightDot: 'rgba(255, 255, 255, 1)'
     }
   }
   return {
-    bg: '#ffffff',
     dimDot: 'rgba(180, 180, 180, 0.8)',
     brightDot: 'rgba(80, 100, 255, 1)'
   }
@@ -76,10 +74,8 @@ const brightLayerStyle = computed(() => ({
   backgroundSize: `${config.value.spacing} ${config.value.spacing}`
 }))
 
-// 顶部渐变遮罩样式
-const topGradientStyle = computed(() => ({
-  background: `linear-gradient(to bottom, ${colors.value.bg} 0%, transparent 100%)`
-}))
+// 顶部渐变遮罩样式（使用 CSS 变量，自动响应 dark mode）
+const topGradientStyle = computed(() => ({}))
 
 // 性能优化：使用 RAF
 let rafId = null
@@ -173,6 +169,7 @@ onUnmounted(() => {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  background-color: var(--vp-c-bg);
   transition: background-color 0.3s ease;
 }
 
@@ -208,6 +205,7 @@ onUnmounted(() => {
   height: 120px;
   z-index: 3;
   pointer-events: none;
+  background: linear-gradient(to bottom, var(--vp-c-bg) 0%, transparent 100%);
   transition: background 0.3s ease;
 }
 
